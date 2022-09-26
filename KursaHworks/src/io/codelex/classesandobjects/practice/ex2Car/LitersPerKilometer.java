@@ -19,7 +19,7 @@ public class LitersPerKilometer {
 
         System.out.println("Liters per 100 kilometers are " + car.calculateConsumption());
         System.out.println("High consumption? " + car.gasHog());
-        System.out.println(" Economy? " + car.economyCar());
+        System.out.println("Economy? " + car.economyCar());
 
     }
 

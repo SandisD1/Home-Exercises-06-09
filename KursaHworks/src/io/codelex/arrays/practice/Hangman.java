@@ -5,12 +5,12 @@ import java.util.Scanner;
 
 public class Hangman {
     static String[] wordDataBase = {"leviathan", "arrogance", "greetings", "earth", "saxophone"};
-    public static int select;
-    public static String word;
-    public static String[] wordArr;
-    public static int gameLength;
-    public static String[] gameField;
-    public static String[] misses;
+    static int select;
+    static String word;
+    static String[] wordArr;
+    static int gameLength;
+    static String[] gameField;
+    static String[] misses;
 
     public static boolean gameOver = false;
 
@@ -29,8 +29,6 @@ public class Hangman {
             }
 
         } while (!choice.equals("quit"));
-
-
     }
 
     public static void initiateBoard() {

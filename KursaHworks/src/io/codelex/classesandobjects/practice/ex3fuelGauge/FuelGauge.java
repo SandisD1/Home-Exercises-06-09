@@ -2,14 +2,14 @@ package io.codelex.classesandobjects.practice.ex3fuelGauge;
 
 public class FuelGauge {
 
-    static int fuelTank = 0;
+    private int fuelTank = 0;
 
     public FuelGauge(int fuelTank) {
-        FuelGauge.fuelTank = fuelTank;
+        this.fuelTank = fuelTank;
     }
 
-    public static int fuelTankCapacity() {
-        if (fuelTank > 70) {
+    public int fuelTankCapacity() {
+        if (getFuelTank() > 70) {
             System.out.println("Fuel tank full! " + (fuelTank - 70) + " liters went to waste!");
             return fuelTank = 70;
         } else {
@@ -17,11 +17,11 @@ public class FuelGauge {
         }
     }
 
-    public static int getFuelTank() {
-        return fuelTank;
+    public int getFuelTank() {
+        return this.fuelTank;
     }
 
-    public static void fuelUp() {
+    public void fuelUp() {
         if (fuelTank < 70) {
             fuelTank++;
         } else {
@@ -29,12 +29,11 @@ public class FuelGauge {
         }
     }
 
-    public static void fuelDown() {
+    public void fuelDown() {
         if (fuelTank > 0) {
-            fuelTank--;
+            --fuelTank;
         } else {
             System.out.println("Tank empty!");
         }
     }
-
 }

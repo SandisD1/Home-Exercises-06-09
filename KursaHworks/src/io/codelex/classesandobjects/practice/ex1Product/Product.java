@@ -1,9 +1,9 @@
 package io.codelex.classesandobjects.practice.ex1Product;
 
 public class Product {
-    String name;
-    double currentPrice;
-    int currentAmount;
+    private final String name;
+    private double currentPrice;
+    private int currentAmount;
 
     public Product(String name, double priceAtStart, int amountAtStart) {
         this.name = name;

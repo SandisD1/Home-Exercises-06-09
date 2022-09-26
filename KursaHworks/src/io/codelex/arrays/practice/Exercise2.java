@@ -1,5 +1,6 @@
 package io.codelex.arrays.practice;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exercise2 {
@@ -23,7 +24,7 @@ public class Exercise2 {
             myArray[i] = minNumber + i;
             sum += myArray[i];
         }
-
+        System.out.println(Arrays.toString(myArray));
         System.out.println("The sum is " + sum);
     }
 }

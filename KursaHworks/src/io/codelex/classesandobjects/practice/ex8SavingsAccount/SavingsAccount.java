@@ -44,18 +44,17 @@ public class SavingsAccount {
     }
 
     public void gainInterest() {
-        BigDecimal monthlyInterest = annualInterest.divide(BigDecimal.valueOf(12), RoundingMode.HALF_EVEN);
+        BigDecimal monthlyInterest = annualInterest.divide(BigDecimal.valueOf(12), RoundingMode.HALF_UP);
         interestEarned = interestEarned.add(balance.multiply(monthlyInterest));
         balance = balance.add(balance.multiply(monthlyInterest));
     }
 
 
-    public String printBankStatement() {
+    public void printBankStatement() {
 
-        System.out.println("totalDeposit $" + totalDeposit);
-        System.out.println("totalWithdraw $" + totalWithdraw);
-        System.out.println("interestEarned $" + interestEarned);
-        System.out.println("balance $" + balance);
-        return null;
+        System.out.printf("\n" + "Total deposited: $" + "%.2f", totalDeposit);
+        System.out.printf("\n" + "Total withdrawn: $" + "%.2f", totalWithdraw);
+        System.out.printf("\n" + "Interest earned: $" + "%.2f", interestEarned);
+        System.out.printf("\n" + "Ending Balance: $" + "%.2f", balance);
     }
 }

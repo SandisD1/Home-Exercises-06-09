@@ -54,24 +54,24 @@ Create a test class to verify how Car works:
 
 ```java
 class LitersPerKilometer {
-  public static void main( String[] args )  {
-    Scanner scan = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
 
-    double startKilometers, endKilometers, liters;
+        double startKilometers, endKilometers, liters;
 
-    System.out.print("Enter first reading: " ); 
-    startKilometers = scan.nextDouble();
+        System.out.print("Enter first reading: ");
+        startKilometers = scan.nextDouble();
 
-    System.out.print("Enter second reading: " ); 
-    endKilometers = scan.nextDouble();
+        System.out.print("Enter second reading: ");
+        endKilometers = scan.nextDouble();
 
-    System.out.print("Enter liters consumed: " ); 
-    liters  = scan.nextDouble();
+        System.out.print("Enter liters consumed: ");
+        liters = scan.nextDouble();
 
-    Car car = new Car( ? , ? , ?);
+        Car car = new Car( ?, ? , ?)
 
-    System.out.println( "Kilometers per liter are "  + car.calculateConsumption() );
-  }
+        System.out.println("Kilometers per liter are " + car.calculateConsumption());
+    }
 }
 ```
 
@@ -94,17 +94,18 @@ these additional methods to write a message to the user if the car is a gas hog 
 You might be tempted to make one of these common design errors:
 
 1. Saving miles per gallon in an instance variable of the object along with startKilometers, endKilometers, and liters.
-   - This almost seems logical, but is a poor design. Don't keep a permanent copy of a value that can be easily
-   calculated from data. The reason for this is that it adds complexity to the object, but offers little advantage.
+    - This almost seems logical, but is a poor design. Don't keep a permanent copy of a value that can be easily
+      calculated from data. The reason for this is that it adds complexity to the object, but offers little advantage.
 2. Directly calculating liters per kilometer inside each of the new methods.
-   - It is usually best to do a particular calculation in only method, and to use it whenever the calculation is needed.
-   Now if there is a bug in the calculation, or the calculation must be modified, there is only one place to look.
+    - It is usually best to do a particular calculation in only method, and to use it whenever the calculation is
+      needed.
+      Now if there is a bug in the calculation, or the calculation must be modified, there is only one place to look.
 
 Change the constructor for the Car class so that it has only one parameter, the first reading of the odometer. The fuel
 consumption cannot yet be calculated. Now add a method to the class:
 
 ```java
-void fillUp( int mileage, double liters )
+void fillUp(int mileage,double liters)
 ```
 
 This simulates filling up the tank at a gas station: mileage is the current odometer reading and liters is the number of
@@ -398,7 +399,7 @@ same!
 Create the method:
 
 ```java
-public static void transfer(Account from, Account to, double howMuch)
+public static void transfer(Account from,Account to,double howMuch)
 ```
 
 The method transfers money from one account to another. You do not need to check that the from account has enough

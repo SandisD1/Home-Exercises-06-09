@@ -9,11 +9,12 @@ public class Video {
     private int timesRated;
     boolean checkedOut;
 
-    public Video(String title, double currentRating) {
+
+    public Video(String title) {
         this.title = title;
-        this.currentRating = currentRating;
+        this.currentRating = 0;
         this.checkedOut = false;
-        this.timesRated = 1;
+        this.timesRated = 0;
     }
 
     public void rateVideo() {
@@ -30,6 +31,14 @@ public class Video {
         return title;
     }
 
+    public boolean isCheckedOut() {
+        return checkedOut;
+    }
+
+    public void setCheckedOut(boolean checkedOut) {
+        this.checkedOut = checkedOut;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -41,5 +50,17 @@ public class Video {
     @Override
     public int hashCode() {
         return Objects.hash(title);
+    }
+
+    @Override
+    public String toString() {
+        if (!checkedOut) {
+            return "Title: " + title + ", Viewer rating: "
+                    + Math.round(currentRating * 10) / 10d + "  Currently available";
+        } else {
+            return "Title: " + title + ", Viewer rating: "
+                    + Math.round(currentRating * 10) / 10d + "  Currently not available";
+        }
+
     }
 }

@@ -1,29 +1,29 @@
 package io.codelex.classesandobjects.practice.ex3fuelGauge;
 
 public class Odometer {
-    static int mileage = 0;
-    static int consumption;
+    private int mileage = 0;
+    private int consumption;
 
     public Odometer(int mileage) {
-        Odometer.mileage = mileage;
+        this.mileage = mileage;
         consumption = 0;
     }
 
-    public static int getMileage() {
+    public int getMileage() {
         return mileage;
     }
 
-    public static void milageUp() {
+    public void milageUp(FuelGauge fuelGauge) {
         mileage++;
         odometerLimit();
         consumption++;
         if (consumption >= 10) {
-            FuelGauge.fuelDown();
+            fuelGauge.fuelDown();
             consumption -= 10;
         }
     }
 
-    public static int odometerLimit() {
+    public int odometerLimit() {
         if (mileage > 999999) {
             return mileage = mileage % 999999 - 1;
         } else {

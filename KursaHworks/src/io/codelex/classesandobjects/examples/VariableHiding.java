@@ -1,7 +1,7 @@
 package io.codelex.classesandobjects.examples;
 
 public class VariableHiding {
-    private int variable = 5;
+    private final int variable = 5;
 
     public static void main(String[] args) {
         VariableHiding example = new VariableHiding();

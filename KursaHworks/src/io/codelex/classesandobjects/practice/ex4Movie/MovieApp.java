@@ -13,7 +13,17 @@ public class MovieApp {
         allMovies.add(movie3);
 
         Movie[] allMoviesArr = allMovies.toArray(new Movie[allMovies.size()]);
-        Movie[] PGmovies = Movie.getPG(allMoviesArr);
+        Movie[] pGmovies = Movie.getPG(allMoviesArr);
+
+        for (int i = 0; i < allMoviesArr.length; i++) {
+            System.out.println(allMoviesArr[i].toString());
+
+        }
+
+        for (Movie pG : pGmovies) {
+            System.out.println(pG.toString());
+        }
+
 
     }
 }

@@ -28,6 +28,5 @@ public class BankStatement {
         }
         myAccount.printBankStatement();
 
-
     }
 }

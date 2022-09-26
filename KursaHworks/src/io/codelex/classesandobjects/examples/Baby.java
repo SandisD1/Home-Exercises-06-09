@@ -1,8 +1,8 @@
 package io.codelex.classesandobjects.examples;
 
 public class Baby {
-    private String name;
-    private Integer age;
+    private final String name;
+    private final Integer age;
 
     public Baby(String name, Integer age) {
         this.name = name;

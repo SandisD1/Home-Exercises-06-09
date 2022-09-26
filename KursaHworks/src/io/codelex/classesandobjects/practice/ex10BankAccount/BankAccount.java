@@ -8,19 +8,19 @@ import java.math.BigDecimal;
 import static java.math.BigDecimal.ZERO;
 
 public class BankAccount {
-    public String name;
-    public BigDecimal balance;
+    private final String name;
+    private BigDecimal balance;
 
     public BankAccount(String name, BigDecimal balance) {
         this.name = name;
         this.balance = balance;
     }
 
-    public final void deposit(BigDecimal amount) {
+    public void deposit(BigDecimal amount) {
         balance = balance.add(amount);
     }
 
-    public final void withdraw(BigDecimal amount) {
+    public void withdraw(BigDecimal amount) {
         balance = balance.subtract(amount);
     }
 
@@ -31,6 +31,6 @@ public class BankAccount {
         } else {
             return name + ", $" + balance;
         }
-
     }
+
 }

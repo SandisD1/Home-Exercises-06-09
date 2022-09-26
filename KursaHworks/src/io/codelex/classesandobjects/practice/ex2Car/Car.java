@@ -13,7 +13,9 @@ public class Car {
     }
 
     public double calculateConsumption() {
-        return liters / ((endKilometers - startKilometers) / 100);
+        double consumption = liters / ((endKilometers - startKilometers) / 100);
+
+        return Math.round(consumption * 100) / 100d;
     }
 
     public boolean gasHog() {

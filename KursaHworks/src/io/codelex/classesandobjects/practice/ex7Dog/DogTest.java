@@ -18,6 +18,5 @@ public class DogTest {
         System.out.println(sparky.fathersName());
         System.out.println(coco.hasSameMotherAs(rocky));
         System.out.println(rocky.hasSameMotherAs(sparky));
-
     }
 }

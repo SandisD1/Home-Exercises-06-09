@@ -36,10 +36,8 @@ public class Dog {
     public boolean hasSameMotherAs(Dog otherDog) {
         if (this == otherDog) return true;
         if (otherDog == null || getClass() != otherDog.getClass()) return false;
-        Dog dog = otherDog;
-        return Objects.equals(mother, dog.mother);
+        return Objects.equals(mother, otherDog.mother);
     }
-
 
     @Override
     public int hashCode() {

@@ -3,7 +3,7 @@ package io.codelex.arrays.examples;
 public class ArrayExample {
     public static void main(String[] args) {
         //must have an initial size defined
-        int myArray[] = new int[7];
+        int[] myArray = new int[7];
 
         myArray[0] = 7;
         myArray[1] = 3;

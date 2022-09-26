@@ -21,9 +21,6 @@ public class AccountApp {
         Account.transfer(A, B, 50);
         Account.transfer(B, C, 25);
 
-
         System.out.println("\n" + A + "\n" + B + "\n" + C);
-
-
     }
 }

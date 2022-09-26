@@ -36,6 +36,6 @@ public class Date {
     }
 
     public void displayDate() {
-        System.out.println(this.date + "/" + this.month + "/" + this.year);
+        System.out.println(this.month + "/" + this.date + "/" + this.year);
     }
 }
