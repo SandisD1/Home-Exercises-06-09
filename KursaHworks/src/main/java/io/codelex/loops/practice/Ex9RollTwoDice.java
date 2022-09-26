@@ -12,12 +12,10 @@ public class Ex9RollTwoDice {
             System.out.println("Impossible!");
         } else {
             System.out.println("Desired sum:" + desiredSum);
-            Random dice = new Random();
 
             while (true) {
-
-                int diceA = dice.nextInt(6) + 1;
-                int diceB = dice.nextInt(6) + 1;
+                int diceA = diceRoll();
+                int diceB = diceRoll();
                 int sum = diceA + diceB;
                 System.out.println(diceA + " and " + diceB + " = " + sum);
                 if (sum == desiredSum) {
@@ -25,5 +23,10 @@ public class Ex9RollTwoDice {
                 }
             }
         }
+    }
+
+    public static int diceRoll() {
+        Random dice = new Random();
+        return dice.nextInt(6) + 1;
     }
 }

@@ -27,12 +27,6 @@ public class Ex6FizzBuzz {
 
             output.replace(0, output.length(), " ");
 
-
         }
-
-    }
-
-    public static String addTo(String a) {
-        return a;
     }
 }
