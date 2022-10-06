@@ -12,6 +12,7 @@ public enum ConversionType {
     ConversionType(float conversionType) {
         this.conversionType = conversionType;
     }
+
     public static float converter(int value, ConversionType conversionType) {
         return value * conversionType.conversionType;
     }

@@ -7,7 +7,7 @@ public class GeometryClassRoom {
         Triangle tri = new Triangle(3, 6, 5);
         Hexagon hex = new Hexagon(6, 5d);
         Cube cube1 = new Cube(6, 5);
-        Cone cone1 = new Cone(2, 8,9);
+        Cone cone1 = new Cone(2, 8, 9);
 
         System.out.println(rect.getArea());
         System.out.println(rect.getPerimeter());

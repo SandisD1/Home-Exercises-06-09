@@ -1,8 +1,8 @@
 package io.codelex.oop.shapes;
 
 public class Triangle extends Shape {
-    private double width;
-    private double height;
+    private final double width;
+    private final double height;
 
     public Triangle(int numSides, double width, double height) {
         super(numSides);
@@ -12,7 +12,7 @@ public class Triangle extends Shape {
 
     @Override
     public double getArea() {
-        return width*height/2;
+        return width * height / 2;
     }
 
     @Override

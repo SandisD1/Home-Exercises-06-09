@@ -1,21 +1,22 @@
 package io.codelex.oop.cars;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 
-public class Car {
+public class Car implements Comparable<Car> {
     private String name;
     private String model;
-    private BigDecimal price;
+    private int price;
     private int yearOfManufacture;
+    private Engine engine;
     List<Manufacturer> manufacturerList;
 
-    public Car(String name, String model, BigDecimal price, int yearOfManufacture, List<Manufacturer> manufacturerList) {
+    public Car(String name, String model, int price, int yearOfManufacture, Engine engine, List<Manufacturer> manufacturerList) {
         this.name = name;
         this.model = model;
         this.price = price;
         this.yearOfManufacture = yearOfManufacture;
+        this.engine = engine;
         this.manufacturerList = manufacturerList;
     }
 
@@ -35,11 +36,11 @@ public class Car {
         this.model = model;
     }
 
-    public BigDecimal getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -59,6 +60,14 @@ public class Car {
         this.manufacturerList = manufacturerList;
     }
 
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -70,5 +79,23 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(name, model, price, yearOfManufacture, manufacturerList);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", model='" + model + '\'' +
+                ", price=" + price +
+                ", yearOfManufacture=" + yearOfManufacture +
+                ", engine=" + engine +
+                ", manufacturerList=" + manufacturerList.toString() +
+                '}';
+    }
+
+
+    @Override
+    public int compareTo(Car car) {
+        return name.compareTo(car.getName());
     }
 }

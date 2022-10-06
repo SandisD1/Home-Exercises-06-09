@@ -5,9 +5,10 @@ import java.time.Period;
 
 public class Employee extends Person {
 
-    private String position;
+    private final String position;
 
-    private LocalDate startedWorking;
+    private final LocalDate startedWorking;
+
     public Employee(String firstName, String lastName, String id, int age, String position, LocalDate startedWorking) {
         super(firstName, lastName, id, age);
         this.position = position;
@@ -18,10 +19,10 @@ public class Employee extends Person {
         LocalDate thisYear = LocalDate.now();
         Period yearsWorked = Period.between(startedWorking, thisYear);
         return yearsWorked.getYears();
-    };
+    }
 
     @Override
     public String getInfo() {
-        return position +" " + getFirstName() + " " + getLastName() + " (" + getWorkExperience() + " years)";
+        return position + " " + getFirstName() + " " + getLastName() + " (" + getWorkExperience() + " years)";
     }
 }

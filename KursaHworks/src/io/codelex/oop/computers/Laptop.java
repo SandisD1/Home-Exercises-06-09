@@ -2,12 +2,13 @@ package io.codelex.oop.computers;
 
 import java.util.Objects;
 
-public class Laptop extends Computer{
+public class Laptop extends Computer {
 
     private String battery;
-    public Laptop(String processor, String RAM, String graphicsCard,String battery, String company, String model) {
+
+    public Laptop(String processor, String RAM, String graphicsCard, String battery, String company, String model) {
         super(processor, RAM, graphicsCard, company, model);
-        this.battery=battery;
+        this.battery = battery;
     }
 
     public String getBattery() {
@@ -20,7 +21,7 @@ public class Laptop extends Computer{
 
     @Override
     public String toString() {
-        return "Laptop{" +  "processor='" + getProcessor() + '\'' +
+        return "Laptop{" + "processor='" + getProcessor() + '\'' +
                 ", RAM='" + getRAM() + '\'' +
                 ", graphicsCard='" + getGraphicsCard() + '\'' +
                 "battery='" + battery + '\'' + ", company='" + getCompany() + '\'' +

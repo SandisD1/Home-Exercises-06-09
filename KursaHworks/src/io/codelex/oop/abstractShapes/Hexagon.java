@@ -1,7 +1,7 @@
 package io.codelex.oop.abstractShapes;
 
-public class Hexagon extends Shape{
-    private double side;
+public class Hexagon extends Shape {
+    private final double side;
 
 
     public Hexagon(int numSides, double side) {
@@ -11,8 +11,8 @@ public class Hexagon extends Shape{
 
     @Override
     public double getArea() {
-        double area = 3d*Math.sqrt(3d)*Math.pow(side, 2d)/2d;
-        return Math.round(area*100d)/100d;
+        double area = 3d * Math.sqrt(3d) * Math.pow(side, 2d) / 2d;
+        return Math.round(area * 100d) / 100d;
     }
 
     @Override

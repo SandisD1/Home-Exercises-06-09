@@ -19,8 +19,6 @@ public class DateTimeExercise {
 
         System.out.println(twoDates[1]);
         System.out.println(findNextFriday13th(twoDates[1]));
-
-
     }
 
     public static LocalDate createNewYearsEve2017() {
@@ -44,7 +42,7 @@ public class DateTimeExercise {
             nextFriday = nextFriday.withDayOfMonth(13);
         }
         while (nextFriday.getDayOfWeek() != DayOfWeek.FRIDAY) {
-           nextFriday = nextFriday.plusMonths(1);
+            nextFriday = nextFriday.plusMonths(1);
         }
 
         return nextFriday;

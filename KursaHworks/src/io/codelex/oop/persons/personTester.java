@@ -13,7 +13,7 @@ public class personTester {
 
         String emplyeeFirstN = "John";
         String emplyeeLastN = "White";
-        LocalDate workingFrom = LocalDate.of(2018, 5,14);
+        LocalDate workingFrom = LocalDate.of(2018, 5, 14);
         Employee johnW = new Employee(emplyeeFirstN, emplyeeLastN, "15532", 42, "Accountant", workingFrom);
         System.out.println(johnW.getInfo());
     }

@@ -1,21 +1,22 @@
 package io.codelex.oop.abstractShapes;
 
-public class Cube extends Shape3D{
+public class Cube extends Shape3D {
 
-    private double side;
+    private final double side;
+
     public Cube(int numSides, double side) {
         super(numSides);
-        this.side=side;
+        this.side = side;
     }
 
     @Override
     public double getArea() {
-        return Math.pow(side, 2d)*6d;
+        return Math.pow(side, 2d) * 6d;
     }
 
     @Override
     public double getPerimeter() {
-        return side *12;
+        return side * 12;
     }
 
     @Override

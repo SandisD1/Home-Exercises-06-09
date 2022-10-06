@@ -15,7 +15,9 @@ public class intersectTest {
         DatePeriod secondPeriod = new DatePeriod(secondStart, secondEnd);
 
         DatePeriod overlap = firstPeriod.intersection(secondPeriod);
+        DatePeriod overlap2 = secondPeriod.intersection(firstPeriod);
 
         System.out.println(overlap);
+        System.out.println(overlap2);
     }
 }

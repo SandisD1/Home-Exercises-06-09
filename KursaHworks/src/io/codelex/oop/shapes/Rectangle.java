@@ -1,8 +1,8 @@
 package io.codelex.oop.shapes;
 
-public class Rectangle extends Shape{
-    private double width;
-    private double height;
+public class Rectangle extends Shape {
+    private final double width;
+    private final double height;
 
     public Rectangle(int numSides, double width, double height) {
         super(numSides);
@@ -12,11 +12,11 @@ public class Rectangle extends Shape{
 
     @Override
     public double getArea() {
-        return width*height;
+        return width * height;
     }
 
     @Override
     public double getPerimeter() {
-        return (width+height)*2;
+        return (width + height) * 2;
     }
 }

@@ -6,8 +6,8 @@ import java.time.LocalDate;
 public class Ex1WorkedHours {
     public static void main(String[] args) {
 
-        LocalDate start = LocalDate.of(2017, 5, 5);;
-        LocalDate end = LocalDate.of(2017, 5, 19);;
+        LocalDate start = LocalDate.of(2017, 5, 5);
+        LocalDate end = LocalDate.of(2017, 5, 19);
         int daysWorked = 0;
 
         while (start.isBefore(end)) {
@@ -20,7 +20,7 @@ public class Ex1WorkedHours {
         }
 
         System.out.println(daysWorked);
-        System.out.println(daysWorked*8);
+        System.out.println(daysWorked * 8);
 
     }
 }

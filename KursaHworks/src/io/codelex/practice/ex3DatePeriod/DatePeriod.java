@@ -3,8 +3,8 @@ package io.codelex.practice.ex3DatePeriod;
 import java.time.LocalDate;
 
 public class DatePeriod {
-    private LocalDate start;
-    private LocalDate end;
+    private final LocalDate start;
+    private final LocalDate end;
 
     public DatePeriod(LocalDate start, LocalDate end) {
         this.start = start;
@@ -19,10 +19,10 @@ public class DatePeriod {
         return end;
     }
 
-    public DatePeriod intersection (DatePeriod datePeriod) {
+    public DatePeriod intersection(DatePeriod datePeriod) {
         LocalDate intersectStart;
         LocalDate intersectEnd;
-        if (this.end.isBefore(datePeriod.getStart())|| datePeriod.getEnd().isBefore(this.start)) {
+        if (this.end.isBefore(datePeriod.getStart()) || datePeriod.getEnd().isBefore(this.start)) {
             return null;
         } else {
             if (this.start.isBefore(datePeriod.getStart())) {
