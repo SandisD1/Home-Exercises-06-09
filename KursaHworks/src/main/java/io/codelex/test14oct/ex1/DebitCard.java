@@ -2,11 +2,9 @@ package io.codelex.test14oct.ex1;
 
 public class DebitCard extends Card {
 
-
     public DebitCard(long cardNumber, String ownerName, String cvv, double balance) {
         super(cardNumber, ownerName, cvv, balance);
     }
-
 
     @Override
     public void deposit(double amount) {
@@ -19,8 +17,6 @@ public class DebitCard extends Card {
         } catch (NotEnoughFundsException e) {
             System.out.println("Warning: Too much money");
         }
-
-
     }
 
     @Override

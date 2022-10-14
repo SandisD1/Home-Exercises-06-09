@@ -12,14 +12,17 @@ public class PartOf {
 
         System.out.println(evenPercent);
 
+        List<String> names = Arrays.asList("John", "Peter", "Angelina", "Bravo");
+        double percent = partOf(names, (String name) -> name.length() > 4);
+        System.out.println(percent);
+
     }
 
     public static <T> double partOf(List<T> list, Function<T, Boolean> func) {
 
         double origSize = list.size();
         double filtSize = list.stream()
-                .filter(func::apply).toList().size();
-        double result = filtSize / origSize;
-        return result;
+                .filter(func::apply).count();
+        return filtSize / origSize;
     }
 }

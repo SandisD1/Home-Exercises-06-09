@@ -7,13 +7,13 @@ public class Joiner<T> {
         this.seperator = seperator;
     }
 
-    public String join(T... args) {
+    @SafeVarargs
+    public final String join(T... args) {
         StringBuilder joined = new StringBuilder();
 
         for (T a : args) {
-            joined.append(a.toString() + seperator);
+            joined.append(a.toString()).append(seperator);
         }
-        joined.deleteCharAt(joined.length() - seperator.length());
-        return joined.substring(0, joined.length() - seperator.length() + 1);
+        return joined.substring(0, joined.length() - seperator.length());
     }
 }
