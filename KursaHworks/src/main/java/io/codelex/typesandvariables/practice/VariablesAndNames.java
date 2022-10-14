@@ -10,7 +10,7 @@ public class VariablesAndNames {
         int carsNotDriven = cars - drivers;
         int carsDriven = drivers;
         int carpoolCapacity = carsDriven * seatsInACar;
-        double averagePassengersPerCar =  (double)passengers / carsDriven;
+        double averagePassengersPerCar = (double) passengers / carsDriven;
 
 
         System.out.println("There are " + cars + " cars available.");

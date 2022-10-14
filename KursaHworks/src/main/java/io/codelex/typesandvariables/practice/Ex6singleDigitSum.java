@@ -10,7 +10,7 @@ public class Ex6singleDigitSum {
         byte num2 = scan.nextByte();
         byte num3 = scan.nextByte();
         byte num4 = scan.nextByte();
-        int sum =  num1 + num2 + num3 + num4;
+        int sum = num1 + num2 + num3 + num4;
         System.out.println(sum);
     }
 }

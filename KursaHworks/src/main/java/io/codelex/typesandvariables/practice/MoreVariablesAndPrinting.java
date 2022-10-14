@@ -10,8 +10,8 @@ public class MoreVariablesAndPrinting {
         String eyes = "Blue";
         String teeth = "White";
         String hair = "Brown";
-        double cmHeight = Math.round(height * 2.54*100.0)/100.0;
-        double kgWeight = Math.round(weight * 0.453592*100.0)/100.0;
+        double cmHeight = Math.round(height * 2.54 * 100.0) / 100.0;
+        double kgWeight = Math.round(weight * 0.453592 * 100.0) / 100.0;
 
 
         System.out.println("Let's talk about " + name + ".");
