@@ -64,16 +64,15 @@ public class StreamsExercise {
 
     public static List<String> getDistinctLetters(List<String> names) {
         return names.stream()
-                .map(name -> Arrays.stream(name.split("")).toList())
-                .flatMap(List::stream).toList()
-                .stream().distinct().collect(Collectors.toList());
+                .flatMap(name -> Arrays.stream(name.split("")))
+                .distinct().collect(Collectors.toList());
     }
 
 
     public static String separateNamesByComma(List<User> users) {
-        StringBuilder result = new StringBuilder();
-        users.forEach(user -> result.append(user.getName()).append(", "));
-        return result.substring(0, result.length() - 2);
+        return users.stream()
+                .map(User::getName)
+                .collect(Collectors.joining(", "));
     }
 
     public static double getAverageAge(List<User> users) {
