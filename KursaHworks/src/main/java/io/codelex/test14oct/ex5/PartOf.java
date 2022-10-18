@@ -2,7 +2,7 @@ package io.codelex.test14oct.ex5;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class PartOf {
     public static void main(String[] args) {
@@ -18,11 +18,11 @@ public class PartOf {
 
     }
 
-    public static <T> double partOf(List<T> list, Function<T, Boolean> func) {
+    public static <T> double partOf(List<T> list, Predicate<T> predicator) {
 
         double origSize = list.size();
         double filtSize = list.stream()
-                .filter(func::apply).count();
+                .filter(predicator).count();
         return filtSize / origSize;
     }
 }

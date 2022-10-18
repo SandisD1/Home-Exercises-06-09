@@ -6,15 +6,42 @@ import org.testng.annotations.Test;
 public class BasketTest {
     @Test
     void cannotRemoveFromEmpty() {
-        Basket first = new Basket<>();
+        Basket<Apple> appleBasket = new Basket<>();
         Apple a1 = new Apple();
+        Assertions.assertThrows(BasketEmptyException.class,
+                () -> appleBasket.removeFromBasket(a1));
+    }
 
-        BasketEmptyException thrown = Assertions.assertThrows(BasketEmptyException.class, () -> {
-            first.removeFromBasket(a1);
-        }, "Basket is expty. Please put something in first");
+    @Test
+    void cannotAddToFull() {
+        Basket<Mushroom> mushroomBasket = new Basket<>();
+        Mushroom m1 = new Mushroom();
 
+        mushroomBasket.addToBasket(m1); //1
+        mushroomBasket.addToBasket(m1); //2
+        mushroomBasket.addToBasket(m1); //3
+        mushroomBasket.addToBasket(m1); //4
+        mushroomBasket.addToBasket(m1); //5
+        mushroomBasket.addToBasket(m1); //6
+        mushroomBasket.addToBasket(m1); //7
+        mushroomBasket.addToBasket(m1); //8
+        mushroomBasket.addToBasket(m1); //9
+        mushroomBasket.addToBasket(m1); //10
 
-        Assertions.assertEquals("Basket is expty. Please put something in first", thrown.getMessage());
+        Assertions.assertThrows(BasketFullException.class,
+                () -> mushroomBasket.addToBasket(m1));
+    }
+
+    @Test
+    void showsCorrenctContains() {
+        Basket<Mushroom> mushroomBasket = new Basket<>();
+        Mushroom m1 = new Mushroom();
+
+        mushroomBasket.addToBasket(m1); //1
+        mushroomBasket.addToBasket(m1); //2
+        mushroomBasket.addToBasket(m1); //3
+
+        Assertions.assertEquals(3, mushroomBasket.getHolds());
 
     }
 }

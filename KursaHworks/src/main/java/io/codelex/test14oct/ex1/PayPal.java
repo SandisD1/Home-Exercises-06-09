@@ -10,15 +10,19 @@ public class PayPal {
         andrew.bankStatement();
         james.bankStatement();
 
+//        andrew.withdraw(10000);
         andrew.withdraw(2100);
         andrew.bankStatement();
         andrew.deposit(9000);
         andrew.bankStatement();
 
+
         james.deposit(200);
         james.bankStatement();
         james.withdraw(950);
         james.bankStatement();
+        james.withdraw(100);
+
 
     }
 }

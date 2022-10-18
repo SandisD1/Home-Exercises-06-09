@@ -1,5 +1,7 @@
 package io.codelex.test14oct.ex3;
 
+import java.util.Arrays;
+
 public class Joiner<T> {
     private final String seperator;
 
@@ -9,13 +11,6 @@ public class Joiner<T> {
 
     @SafeVarargs
     public final String join(T... args) {
-        StringBuilder joined = new StringBuilder();
-
-        for (T a : args) {
-            joined.append(a.toString()).append(seperator);
-        }
-
-        // Arrays.stream(args).map(T::toString).reduce((a,b)-> a+seperator+b).get();
-        return joined.substring(0, joined.length() - seperator.length());
+        return Arrays.stream(args).map(T::toString).reduce((a, b) -> a + seperator + b).get();
     }
 }

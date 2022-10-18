@@ -17,10 +17,6 @@ public abstract class Card {
         return balance;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
     public long getCardNumber() {
         return cardNumber;
     }
@@ -29,13 +25,17 @@ public abstract class Card {
         return ownerName;
     }
 
-    public String getCvv() {
-        return cvv;
+    public void deposit(double amount) {
+        balance = balance + amount;
     }
 
-    public abstract void deposit(double amount);
-
-    public abstract void withdraw(double amount);
+    public void withdraw(double amount) {
+        double total = balance - amount;
+        if (total < 0d) {
+            throw new NotEnoughFundsException();
+        }
+        balance = total;
+    }
 
     public abstract void bankStatement();
 }

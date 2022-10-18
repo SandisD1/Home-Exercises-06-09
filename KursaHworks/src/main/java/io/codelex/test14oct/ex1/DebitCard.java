@@ -8,26 +8,15 @@ public class DebitCard extends Card {
 
     @Override
     public void deposit(double amount) {
-        double total = super.getBalance() + amount;
-        try {
-            super.setBalance(total);
-            if (total > 10000d) {
-                throw new NotEnoughFundsException();
-            }
-        } catch (NotEnoughFundsException e) {
+        super.deposit(amount);
+        if (getBalance() > 10000d) {
             System.out.println("Warning: Too much money");
         }
     }
 
     @Override
-    public void withdraw(double amount) {
-        double total = super.getBalance() - amount;
-        super.setBalance(total);
-    }
-
-    @Override
     public void bankStatement() {
-        System.out.println(super.getOwnerName() + "'s Debit card. Card number - " + super.getCardNumber());
-        System.out.println(" Balance : " + super.getBalance());
+        System.out.println(getOwnerName() + "'s Debit card. Card number - " + getCardNumber());
+        System.out.println(" Balance : " + getBalance());
     }
 }

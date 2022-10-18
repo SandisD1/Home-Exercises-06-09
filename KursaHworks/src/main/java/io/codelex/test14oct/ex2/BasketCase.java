@@ -2,36 +2,53 @@ package io.codelex.test14oct.ex2;
 
 public class BasketCase {
     public static void main(String[] args) {
-        Basket first = new Basket<>();
+        Basket<Apple> appleBasket = new Basket();
+        Basket<Mushroom> mushroomBasket = new Basket<>();
         Apple a1 = new Apple();
-        Apple a2 = new Apple();
         Mushroom m1 = new Mushroom();
-        Mushroom m2 = new Mushroom();
 
-        first.removeFromBasket(a1);
-        System.out.println(first.getHolds());
-        first.addToBasket(a1);
-        System.out.println(first.getHolds());
-        first.addToBasket(m1);
-        System.out.println(first.getHolds());
-        first.addToBasket(m2);
-        System.out.println(first.getHolds());
-        first.addToBasket(a1);
-        first.addToBasket(a2);
-        first.addToBasket(a2);
-        first.addToBasket(a1);
-        first.addToBasket(a1);
-        first.addToBasket(a1);
-        first.addToBasket(a1);
-        System.out.println(first.getHolds());
-        first.addToBasket(a1);
-        System.out.println(first.getHolds());
-        first.addToBasket(a1);
-        System.out.println(first.getHolds());
-        first.addToBasket(a1);
-        System.out.println(first.getHolds());
-        first.addToBasket(a1);
-        System.out.println(first.getHolds());
+//        first.removeFromBasket(a1);
+//        System.out.println(first.getHolds());
+        appleBasket.addToBasket(a1);
+        System.out.println(appleBasket.getHolds());
+//        appleBasket.addToBasket(m1);
+//        System.out.println(appleBasket.getHolds());
+        appleBasket.addToBasket(a1);
+        System.out.println(appleBasket.getHolds());
+        appleBasket.addToBasket(a1);
+        System.out.println(appleBasket.getHolds());
+        appleBasket.addToBasket(a1);
+        System.out.println(appleBasket.getHolds());
+        appleBasket.addToBasket(a1);
+        System.out.println(appleBasket.getHolds());
+        appleBasket.addToBasket(a1);
+        System.out.println(appleBasket.getHolds());
+        appleBasket.addToBasket(a1);
+        System.out.println(appleBasket.getHolds());
+        appleBasket.addToBasket(a1);
+        System.out.println(appleBasket.getHolds());
+        appleBasket.addToBasket(a1);
+        System.out.println(appleBasket.getHolds());
+        appleBasket.addToBasket(a1);
+        System.out.println(appleBasket.getHolds());
+//        mushroomBasket.removeFromBasket(m1);
+//        System.out.println(appleBasket.getHolds());
+        System.out.println(mushroomBasket.getHolds());
+        mushroomBasket.addToBasket(m1);
+        System.out.println(mushroomBasket.getHolds());
+        mushroomBasket.addToBasket(m1);
+        mushroomBasket.addToBasket(m1);
+        mushroomBasket.addToBasket(m1);
+        mushroomBasket.addToBasket(m1);
+        System.out.println(mushroomBasket.getHolds());
+        mushroomBasket.addToBasket(m1);
+        mushroomBasket.addToBasket(m1);
+        mushroomBasket.addToBasket(m1);
+        mushroomBasket.addToBasket(m1);
+        mushroomBasket.addToBasket(m1);
+        System.out.println(mushroomBasket.getHolds());
+//        mushroomBasket.addToBasket(m1);
+
 
     }
 }
