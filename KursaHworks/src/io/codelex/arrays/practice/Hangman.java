@@ -1,18 +1,17 @@
 package io.codelex.arrays.practice;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Hangman {
-    static String[] wordDataBase = {"leviathan", "arrogance", "greetings", "earth", "saxophone"};
-    static int select;
-    static String word;
-    static String[] wordArr;
-    static int gameLength;
-    static String[] gameField;
-    static String[] misses;
+    private static final String[] wordDataBase = {"leviathan", "arrogance", "greetings", "earth", "saxophone"};
+    private static String[] wordArr;
+    private static int gameLength;
+    private static String[] gameField;
+    private static String[] misses;
 
-    public static boolean gameOver = false;
+    private static boolean gameOver = false;
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -32,9 +31,10 @@ public class Hangman {
     }
 
     public static void initiateBoard() {
+        Random random = new Random();
         gameOver = false;
-        select = (int) (Math.random() * wordDataBase.length);
-        word = wordDataBase[select];
+        int select = random.nextInt(wordDataBase.length);
+        String word = wordDataBase[select];
         wordArr = word.split("");
         gameLength = wordArr.length;
         gameField = new String[gameLength];

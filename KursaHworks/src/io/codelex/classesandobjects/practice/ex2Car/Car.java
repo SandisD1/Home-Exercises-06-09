@@ -2,9 +2,11 @@ package io.codelex.classesandobjects.practice.ex2Car;
 
 public class Car {
 
-    double startKilometers;
-    double endKilometers;
-    double liters;
+    private final double startKilometers;
+    private double endKilometers;
+    private double liters;
+    private final double HOG_CONSUMPTION = 15d;
+    private final double ECONOMY_CONSUMPTION = 5d;
 
     public Car(double startKilometers) {
         this.startKilometers = startKilometers;
@@ -19,11 +21,11 @@ public class Car {
     }
 
     public boolean gasHog() {
-        return calculateConsumption() > 15;
+        return calculateConsumption() > HOG_CONSUMPTION;
     }
 
     public boolean economyCar() {
-        return calculateConsumption() < 5;
+        return calculateConsumption() < ECONOMY_CONSUMPTION;
     }
 
     public void fillUp(double mileage, double liters) {

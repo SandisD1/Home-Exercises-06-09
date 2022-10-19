@@ -26,10 +26,8 @@ public class LitersPerKilometer {
     private static Car getCarData() {
         Scanner scan = new Scanner(System.in);
 
-        double startKilometers;
-
         System.out.println("Enter first reading: ");
-        startKilometers = scan.nextDouble();
+        double startKilometers = scan.nextDouble();
 
         return new Car(startKilometers);
     }

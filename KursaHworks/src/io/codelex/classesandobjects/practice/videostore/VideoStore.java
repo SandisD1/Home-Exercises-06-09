@@ -22,20 +22,16 @@ public class VideoStore {
 
     public static void checkOutVideo(String videoTitle) {
         Video current = findVideo(videoTitle);
-        assert current != null;
         current.setCheckedOut(true);
     }
 
     public static void returnRentedVideo(String videoTitle) {
         Video current = findVideo(videoTitle);
-        assert current != null;
         current.setCheckedOut(false);
-
     }
 
     public static void rateVideo(String videoTitle) {
         Video current = findVideo(videoTitle);
-        assert current != null;
         current.rateVideo();
     }
 
@@ -44,5 +40,4 @@ public class VideoStore {
             System.out.println(vid);
         }
     }
-
 }

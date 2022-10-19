@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class TicTacToe {
 
     private static final char[][] board = new char[3][3];
-    static boolean xMove = true;
-    static boolean gameOver = false;
-    static char winner = '-';
+    private static boolean xMove = true;
+    private static boolean gameOver = false;
+    private static char winner = '-';
 
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);

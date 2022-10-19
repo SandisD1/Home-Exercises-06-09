@@ -11,7 +11,7 @@ public class Exercise6 {
             firstArr[i] = random;
         }
         int[] secondArr = Arrays.copyOf(firstArr, 10);
-        firstArr[9] = -7;
+        firstArr[firstArr.length - 1] = -7;
 
         System.out.print("Array 1: ");
         for (int first : firstArr) {

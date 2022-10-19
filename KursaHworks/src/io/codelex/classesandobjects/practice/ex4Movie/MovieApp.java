@@ -1,6 +1,7 @@
 package io.codelex.classesandobjects.practice.ex4Movie;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MovieApp {
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class MovieApp {
         allMovies.add(movie3);
 
         Movie[] allMoviesArr = allMovies.toArray(new Movie[allMovies.size()]);
-        Movie[] pGmovies = Movie.getPG(allMoviesArr);
+        Movie[] pGmovies = getPG(allMoviesArr);
 
         for (int i = 0; i < allMoviesArr.length; i++) {
             System.out.println(allMoviesArr[i].toString());
@@ -24,6 +25,16 @@ public class MovieApp {
             System.out.println(pG.toString());
         }
 
+    }
 
+    public static Movie[] getPG(Movie[] movies) {
+        List<Movie> pGs = new ArrayList<>();
+
+        for (int i = 0; i < movies.length; i++) {
+            if (movies[i].getRating().equals("PG")) {
+                pGs.add(movies[i]);
+            }
+        }
+        return pGs.toArray(new Movie[0]);
     }
 }

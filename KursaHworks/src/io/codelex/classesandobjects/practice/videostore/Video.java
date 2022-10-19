@@ -7,7 +7,7 @@ public class Video {
     private final String title;
     private double currentRating;
     private int timesRated;
-    boolean checkedOut;
+    private boolean checkedOut;
 
 
     public Video(String title) {
