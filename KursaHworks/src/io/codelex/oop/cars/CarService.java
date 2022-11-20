@@ -5,22 +5,25 @@ import java.util.Collections;
 import java.util.List;
 
 public class CarService {
-    private static final List<Car> listOfCars = new ArrayList<>();
+    private final List<Car> listOfCars;
 
+    public CarService() {
+        this.listOfCars = new ArrayList<>();
+    }
 
-    public static List<Car> getListOfCars() {
+    public List<Car> getListOfCars() {
         return listOfCars;
     }
 
-    public static void addCarToList(Car car) {
-        listOfCars.add(car);
+    public void addCarToList(Car car) {
+        this.listOfCars.add(car);
     }
 
-    public static void removeCarFromList(Car car) {
+    public void removeCarFromList(Car car) {
         listOfCars.remove(car);
     }
 
-    public static List<Car> getListOfCarsByEngine(Engine engine) {
+    public List<Car> getListOfCarsByEngine(Engine engine) {
         List<Car> carsOfSpecifiedEngine = new ArrayList<>();
         for (Car car : listOfCars) {
             if (car.getEngine().equals(engine)) {
@@ -30,7 +33,7 @@ public class CarService {
         return carsOfSpecifiedEngine;
     }
 
-    public static List<Car> getCarsProducedBefore(int year) {
+    public List<Car> getCarsProducedBefore(int year) {
         List<Car> carsBeforeYear = new ArrayList<>();
         for (Car car : listOfCars) {
             if (car.getYearOfManufacture() < year) {
@@ -40,7 +43,7 @@ public class CarService {
         return carsBeforeYear;
     }
 
-    public static Car getMostExpensive() {
+    public Car getMostExpensive() {
         Car mostExpensive = getListOfCars().get(0);
         for (Car car : listOfCars) {
             if (car.getPrice() > mostExpensive.getPrice()) {
@@ -50,7 +53,7 @@ public class CarService {
         return mostExpensive;
     }
 
-    public static Car getCheapest() {
+    public Car getCheapest() {
         Car cheapest = getListOfCars().get(0);
         for (Car car : listOfCars) {
             if (car.getPrice() < cheapest.getPrice()) {
@@ -60,7 +63,7 @@ public class CarService {
         return cheapest;
     }
 
-    public static List<Car> carsWithNumManufact(int numOfMan) {
+    public List<Car> carsWithNumManufact(int numOfMan) {
         List<Car> carsOfEnnoughMan = new ArrayList<>();
         for (Car car : listOfCars) {
             if (car.getManufacturerList().size() >= numOfMan) {
@@ -70,11 +73,11 @@ public class CarService {
         return carsOfEnnoughMan;
     }
 
-    public static boolean isPresentInList(Car car) {
+    public boolean isPresentInList(Car car) {
         return listOfCars.contains(car);
     }
 
-    public static List<Car> carsProducedBy(Manufacturer manufacturer) {
+    public List<Car> carsProducedBy(Manufacturer manufacturer) {
         List<Car> carsByManufact = new ArrayList<>();
         for (Car car : listOfCars) {
             if (car.getManufacturerList().contains(manufacturer)) {
@@ -84,7 +87,7 @@ public class CarService {
         return carsByManufact;
     }
 
-    public static List<Car> sorted(Comparator comparator) {
+    public List<Car> sorted(Comparator comparator) {
         if (comparator.equals(Comparator.ASCENDING)) {
             Collections.sort(listOfCars);
         }
@@ -94,7 +97,7 @@ public class CarService {
         return listOfCars;
     }
 
-    public static List<Car> manufactByYOE(Comparator comparator, int year) {
+    public List<Car> manufactByYOE(Comparator comparator, int year) {
         List<Car> carsByManufactYear = new ArrayList<>();
         if (comparator.equals(Comparator.MORE_THAN)) {
             for (Car car : listOfCars) {
@@ -126,7 +129,7 @@ public class CarService {
                 }
             }
         }
-        if (comparator.equals(Comparator.LESS_OR_EAQUAL_TO)) {
+        if (comparator.equals(Comparator.LESS_OR_EQUAL_TO)) {
             for (Car car : listOfCars) {
                 for (Manufacturer manu : car.getManufacturerList()) {
                     if (manu.getYearOfEstablishment() <= year) {
@@ -161,7 +164,7 @@ public class CarService {
     }
 
 
-    public static void printList() {
+    public void printList() {
         System.out.println("CarService currently contains :");
         for (Car car : listOfCars) {
             System.out.println(car);

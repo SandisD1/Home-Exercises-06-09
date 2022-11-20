@@ -4,14 +4,14 @@ import java.util.Objects;
 
 public class Computer {
     private String processor;
-    private String RAM;
+    private String ram;
     private String graphicsCard;
     private String company;
     private String model;
 
-    public Computer(String processor, String RAM, String graphicsCard, String company, String model) {
+    public Computer(String processor, String ram, String graphicsCard, String company, String model) {
         this.processor = processor;
-        this.RAM = RAM;
+        this.ram = ram;
         this.graphicsCard = graphicsCard;
         this.company = company;
         this.model = model;
@@ -25,12 +25,12 @@ public class Computer {
         this.processor = processor;
     }
 
-    public String getRAM() {
-        return RAM;
+    public String getRam() {
+        return ram;
     }
 
-    public void setRAM(String RAM) {
-        this.RAM = RAM;
+    public void setRam(String ram) {
+        this.ram = ram;
     }
 
     public String getGraphicsCard() {
@@ -61,7 +61,7 @@ public class Computer {
     public String toString() {
         return "Computer{" +
                 "processor='" + processor + '\'' +
-                ", RAM='" + RAM + '\'' +
+                ", RAM='" + ram + '\'' +
                 ", graphicsCard='" + graphicsCard + '\'' +
                 ", company='" + company + '\'' +
                 ", model='" + model + '\'' +
@@ -73,11 +73,11 @@ public class Computer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Computer computer = (Computer) o;
-        return processor.equals(computer.processor) && RAM.equals(computer.RAM) && graphicsCard.equals(computer.graphicsCard) && company.equals(computer.company) && model.equals(computer.model);
+        return processor.equals(computer.processor) && ram.equals(computer.ram) && graphicsCard.equals(computer.graphicsCard) && company.equals(computer.company) && model.equals(computer.model);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(processor, RAM, graphicsCard, company, model);
+        return Objects.hash(processor, ram, graphicsCard, company, model);
     }
 }

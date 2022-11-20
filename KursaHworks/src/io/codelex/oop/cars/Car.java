@@ -9,7 +9,7 @@ public class Car implements Comparable<Car> {
     private int price;
     private int yearOfManufacture;
     private Engine engine;
-    List<Manufacturer> manufacturerList;
+    private List<Manufacturer> manufacturerList;
 
     public Car(String name, String model, int price, int yearOfManufacture, Engine engine, List<Manufacturer> manufacturerList) {
         this.name = name;
@@ -73,7 +73,11 @@ public class Car implements Comparable<Car> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return yearOfManufacture == car.yearOfManufacture && Objects.equals(name, car.name) && Objects.equals(model, car.model) && Objects.equals(price, car.price) && Objects.equals(manufacturerList, car.manufacturerList);
+        return yearOfManufacture == car.yearOfManufacture &&
+                Objects.equals(name, car.name) &&
+                Objects.equals(model, car.model) &&
+                Objects.equals(price, car.price) &&
+                Objects.equals(manufacturerList, car.manufacturerList);
     }
 
     @Override

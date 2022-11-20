@@ -8,14 +8,14 @@ public class ComputersTest {
 
         System.out.println(dellOptiplex);
         String hpProc = hp600.getProcessor();
-        String hpRAM = hp600.getRAM();
+        String hpRAM = hp600.getRam();
         String hpGraphCard = hp600.getGraphicsCard();
         String hpCompany = hp600.getCompany();
         String hpModel = hp600.getModel();
         System.out.println(hpProc + "; " + hpRAM + "; " + hpGraphCard + "; " + hpCompany + "; " + hpModel);
 
         nextGen.setProcessor(hpProc);
-        nextGen.setRAM(hpRAM);
+        nextGen.setRam(hpRAM);
         nextGen.setGraphicsCard(hpGraphCard);
         nextGen.setCompany(hpCompany);
         nextGen.setModel(hpModel);
